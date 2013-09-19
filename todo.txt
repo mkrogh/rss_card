@@ -1,0 +1,8 @@
+
+* Figure out services
+  * RSS parser (RSS/atom => card)
+  * Settings
+  * ???
+* Do a drag and drop spike/branch
+* XSS protection... (cleanup content?)
+* Frontend - rails?
