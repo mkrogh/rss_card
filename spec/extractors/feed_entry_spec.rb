@@ -42,7 +42,7 @@ describe  Extractors::AtomFeedEntry do
 
   context "when extracting a rss 1.0 entry" do
     before(:all) do
-      @entry = load_rss1_entry
+      @entry = load_rss_entry("spec/feeds/sample-rss-1.xml")
     end
     
     subject {Extractors::RSSFeedEntry.extract(@entry)}
@@ -61,14 +61,8 @@ def load_atom_entry
   feed.entries.first
 end
 
-def load_rss1_entry
-  feed = RSS::Parser.parse(open("spec/feeds/sample-rss-1.xml").read)
-
-  feed.items.first
-end
-
 def load_rss_entry(source)
   feed = RSS::Parser.parse(open(source).read)
 
-  feed.channel.items.first
+  feed.items.first
 end
