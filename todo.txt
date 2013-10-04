@@ -6,4 +6,5 @@
 * Do a drag and drop spike/branch
 * XSS protection... (cleanup content?)
 * Frontend - rails?
+* Extract Feed Entry extraction.
 * Sanitize rss feeds (whitelist)
