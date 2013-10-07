@@ -2,7 +2,7 @@
 # A simple feed meant to hold the content of an RSS feed.
 # 
 class Feed
-  attr_accessor :source, :title, :items
+  attr_accessor :source, :title, :items, :updated
   
   # Creates a new feed.
   # @param source [String] the source url for the feed   

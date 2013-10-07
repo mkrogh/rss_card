@@ -15,6 +15,11 @@ describe FeedFetcher do
     its("items.first.title") {should eq "Coffee"}
     its("items.first.updated") {should eq Time.new(2013,10,4)}
     its("items.first.content") {should include("Yesterday my new coffee grinder arrived")}
+    it "sets the updated time to now" do
+      Time.stub(:now) {Time.new(2013,10,05,13,28,12)}
+      feed = update_feed("spec/feeds/atom.xml")
+      feed.updated.should == Time.new(2013,10,5,13,28,12)
+    end
   end
 
 

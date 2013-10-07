@@ -15,6 +15,7 @@ class FeedFetcher
         update_rss(rss, feed)
       end
     end
+    feed.updated = Time.now
   end
 
   private
