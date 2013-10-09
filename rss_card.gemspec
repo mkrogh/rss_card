@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = RssCard::VERSION
   gem.authors       = ["Markus Krogh"]
   gem.email         = ["markus@casadelkrogh.dk"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = "Simple rss feed fetching and rss cards"
+  gem.summary       = ""
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
