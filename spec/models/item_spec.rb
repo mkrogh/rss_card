@@ -1,6 +1,6 @@
 
 require "spec_helper"
-require "models/item"
+require "rss_card/models/item"
 describe Item do
 
   context "when creating a simple item" do 

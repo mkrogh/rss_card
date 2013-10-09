@@ -1,5 +1,5 @@
 require "spec_helper"
-require "models/feed"
+require "rss_card/models/feed"
 
 
 describe Feed do

@@ -1,4 +1,4 @@
-require "models/item"
+require "rss_card/models"
 module  Extractors
 
   class AtomFeedEntry

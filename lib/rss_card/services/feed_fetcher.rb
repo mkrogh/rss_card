@@ -1,6 +1,6 @@
 require "rss"
 require "open-uri"
-require "extractors/feed_entry"
+require "rss_card/extractors"
 
 class FeedFetcher
 

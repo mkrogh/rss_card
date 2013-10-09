@@ -1,6 +1,6 @@
 require "spec_helper"
-require "services/feed_fetcher"
-require "models/feed"
+require "rss_card/services"
+require "rss_card/models"
 
 describe FeedFetcher do
   

@@ -1,6 +1,6 @@
 require "spec_helper"
 require "rss"
-require "extractors/feed_entry"
+require "rss_card/extractors"
 
 describe  Extractors::AtomFeedEntry do
 
