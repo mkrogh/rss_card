@@ -7,16 +7,28 @@ require "rss_card/models/item"
 describe CardRss do
   let(:feed) {mock_feed}
   let(:card) {new_card(feed)}
-  subject {card}
-  its(:title){should == "Feed title"}
-  its(:items) {should have(3).items}
-  its("items.first.title") {should == "Item 1"}
+  
+  context "when handling a simple card" do
+    subject {card}
+    its(:title){should == "Feed title"}
+    its(:items) {should have(3).items}
+    its("items.first.title") {should == "Item 1"}
+  end
+
+  context "when updating card" do
+    it "title should change with feed title" do
+      card.title.should == "Feed title"
+      card.update
+      card.title.should == "CasaDelKrogh"
+    end
+  end
+
 end
 
 
 private
 def mock_feed
-  feed = Feed.new("someFeed")
+  feed = Feed.new("spec/feeds/atom.xml")
   feed.title = "Feed title"
   feed.items << new_item("Item 1")
   feed.items << new_item("Item 2")
