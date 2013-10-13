@@ -12,7 +12,6 @@ describe Feed do
     its(:items) {should be_empty}
     its(:updated) {should == Time.new(2013,10,5,13,16,21)}
   end
-
 end
 
 

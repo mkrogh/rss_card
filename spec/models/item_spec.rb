@@ -12,7 +12,12 @@ describe Item do
     its(:updated){should == Time.new("2013","06","09")}
     its(:url){should == "http://casadelkrogh.dk/code/2013/06/09/tracking-time" }
     its(:id){should == "some_id1"}
+  end
 
+  context "when comparing two items" do 
+    let(:item){create_item}
+    subject{create_item}
+    it {should == item}
   end
 end
 

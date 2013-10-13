@@ -23,6 +23,13 @@ describe CardRss do
     end
   end
 
+  context "when setting an item_limit larger than feed size" do
+    it "the size should match the full item list" do
+      card.item_limit = 100
+      card.should have(4).items
+    end
+  end
+
 end
 
 
