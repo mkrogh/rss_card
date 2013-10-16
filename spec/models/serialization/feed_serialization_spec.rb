@@ -7,9 +7,9 @@ describe Feed do
   let(:feed){feed_from_file("spec/feeds/atom.xml")}
   context "serializing feed to json" do
     subject {get_json_obj(feed)}
-    it {should include('title' => "CasaDelKrogh")}
-    it {should include('source' => "spec/feeds/atom.xml")}
-    it {should include('updated')}
+    its(["title"]) {should == "CasaDelKrogh"}
+    its(["source"]) {should == "spec/feeds/atom.xml"}
+    its(["updated"]) {should == feed.updated.to_s}
     it {should have(3)['items']}
   end
 

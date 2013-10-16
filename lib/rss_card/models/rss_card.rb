@@ -1,3 +1,4 @@
+require "json"
 
 class CardRss
   attr_accessor :item_limit
@@ -18,6 +19,16 @@ class CardRss
 
   def update
     FeedFetcher.update(@feed)
+  end
+
+  def to_json(*a)
+    {
+      card: {
+        title: title,
+        items: items 
+      }
+    }.to_json(*a)
+    
   end
   
 end
