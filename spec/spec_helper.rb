@@ -6,10 +6,17 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 module Helpers
   @@feeds = {}
+  @@files = {}
+
+  def read_file(file)
+      @@files[file] = open(file).read unless @@files.include?(file)
+      @@files[file]
+  end
   def feed_from_file(file)
     if @@feeds[file].nil?
       feed = Feed.new(file)
-      FeedFetcher.update(feed)
+      feed_data = read_file(file)
+      FeedFetcher.update(feed,feed_data)
       feed.freeze
       @@feeds[file] = feed
     end

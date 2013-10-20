@@ -4,8 +4,12 @@ require "rss_card/extractors"
 
 class FeedFetcher
 
-  def self.update(feed)
-    rss = RSS::Parser.parse(feed.source)  if feed.source
+  def self.update(feed, feed_data=nil)
+    if feed_data
+      rss = RSS::Parser.parse(feed_data)
+    elsif feed.source
+      rss = RSS::Parser.parse(feed.source)
+    end
 
     unless rss.nil?
       case rss.feed_type
